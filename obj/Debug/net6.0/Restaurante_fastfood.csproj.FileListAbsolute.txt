@@ -1,0 +1,15 @@
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.csproj.AssemblyReference.cache
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.AssemblyInfoInputs.cache
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.AssemblyInfo.cs
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.csproj.CoreCompileInputs.cache
+C:\Users\julio\source\repos\Restaurante_fastfood\bin\Debug\net6.0\Restaurante_fastfood.exe
+C:\Users\julio\source\repos\Restaurante_fastfood\bin\Debug\net6.0\Restaurante_fastfood.deps.json
+C:\Users\julio\source\repos\Restaurante_fastfood\bin\Debug\net6.0\Restaurante_fastfood.runtimeconfig.json
+C:\Users\julio\source\repos\Restaurante_fastfood\bin\Debug\net6.0\Restaurante_fastfood.dll
+C:\Users\julio\source\repos\Restaurante_fastfood\bin\Debug\net6.0\Restaurante_fastfood.pdb
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.dll
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\refint\Restaurante_fastfood.dll
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.pdb
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\Restaurante_fastfood.genruntimeconfig.cache
+C:\Users\julio\source\repos\Restaurante_fastfood\obj\Debug\net6.0\ref\Restaurante_fastfood.dll
