@@ -29,12 +29,16 @@ namespace Restaurante_fastfood.Entities
         {
             Carrinho.Add(Item);
         }
-        public void ShowCarrinho()
+        public static void ShowCarrinho()
         {
-            Console.WriteLine("");
-            for (int i = 0; i < Carrinho.Count; i++)
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < Products.Count; i++)
             {
-                Console.WriteLine(Products[Carrinho[i]]);
+                
+                foreach(var c in Carrinho)
+                {
+                    if()
+                }
             }
         }
 
