@@ -30,8 +30,10 @@ namespace Restaurante_fastfood
                 {
                     escolha = Console.ReadLine().ToLower().Trim();
                     if (Validations.Produtos_Disponiveis(escolha)) { break; }
+                    PdList.Add
                 }
                 if (escolha == "0") { break; }
+
             }
 
 

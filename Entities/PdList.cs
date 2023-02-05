@@ -8,6 +8,7 @@ namespace Restaurante_fastfood.Entities
 {
     public class PdList
     {
+        public static List<string> Carrinho { get; set; } = new List<string>();
         public static Dictionary<string, double> Products { get; } = new Dictionary<string, double>();
         public PdList()
         {
@@ -20,9 +21,21 @@ namespace Restaurante_fastfood.Entities
         {
             return Products[key];
         }
-        static void AddItem()
+        public static void RemoveItem()
         {
-            
+
+        }
+        public static void AddItem(string Item)
+        {
+            Carrinho.Add(Item);
+        }
+        public void ShowCarrinho()
+        {
+            Console.WriteLine("");
+            for (int i = 0; i < Carrinho.Count; i++)
+            {
+                Console.WriteLine(Products[Carrinho[i]]);
+            }
         }
 
     }
