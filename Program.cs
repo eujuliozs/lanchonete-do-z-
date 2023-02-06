@@ -12,18 +12,7 @@ namespace Restaurante_fastfood
             PdList começo_do_programa = new PdList();
             Console.WriteLine("Delivery App ");
             Console.WriteLine("temos: ");
-            StringBuilder sb = new StringBuilder();
-
-
-            foreach(var c in PdList.Products.Keys)
-            {
-                sb.AppendLine($"{c} R${PdList.Products[c].ToString("F2", CultureInfo.InvariantCulture)}");
-                
-            }
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(sb);
-            Console.ResetColor();
-            
+            PdList.ShowProdutos();
             string escolha="";
             while (true)
             { 
@@ -33,7 +22,7 @@ namespace Restaurante_fastfood
                     escolha = Console.ReadLine().ToLower().Trim();
                     if (Validations.Produtos_Disponiveis(escolha)) 
                     { 
-                        PdList.AddItem(escolha); 
+                        PdList.AddItem(escolha, PdList.Products[escolha]); 
                         break;
                     }
                     else if(!Validations.Produtos_Disponiveis(escolha) & escolha != "0")

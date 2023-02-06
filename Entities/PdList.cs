@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,7 +9,7 @@ namespace Restaurante_fastfood.Entities
 {
     public class PdList
     {
-        public static List<string> Carrinho { get; set; } = new List<string>();
+        public static Dictionary<string, double> Carrinho { get; set; } = new Dictionary<string, double>();
         public static Dictionary<string, double> Products { get; } = new Dictionary<string, double>();
         public PdList()
         {
@@ -25,21 +26,35 @@ namespace Restaurante_fastfood.Entities
         {
 
         }
-        public static void AddItem(string Item)
+        public static void AddItem(string key, double valor)
         {
-            Carrinho.Add(Item);
+            Carrinho[key] = valor;
         }
         public static void ShowCarrinho()
         {
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < Products.Count; i++)
+            foreach(var c in Carrinho.Keys)
             {
-                
-                foreach(var c in Carrinho)
-                {
-                    if()
-                }
+                sb.AppendLine($"{c} {Carrinho[c].ToString("F2" + CultureInfo.InvariantCulture)}");
             }
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine(sb);
+            Console.ResetColor();
+            
+        }
+        public static void ShowProdutos()
+        {
+            StringBuilder sb = new StringBuilder();
+
+
+            foreach (var c in PdList.Products.Keys)
+            {
+                sb.AppendLine($"{c} R${PdList.Products[c].ToString("F2", CultureInfo.InvariantCulture)}");
+
+            }
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(sb);
+            Console.ResetColor();
         }
 
     }
