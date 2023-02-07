@@ -20,5 +20,16 @@ namespace Restaurante_fastfood.Entities
             }
             return false;
         }
+        public static bool Sim_Não(string escolha)
+        {
+            escolha = escolha.ToLower().Trim();
+            
+            if (escolha[0] == 's' | escolha[0] == 'n')
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

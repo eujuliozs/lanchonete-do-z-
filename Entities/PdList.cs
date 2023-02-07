@@ -18,13 +18,30 @@ namespace Restaurante_fastfood.Entities
             Products["coca"] = 4;
             Products["dolly"] = 4;
         }
-        static double SubTotal(string key)
+        static double Total()
         {
-            return Products[key];
+            double total = 0;
+            foreach(var item in Carrinho.Values)
+            {
+                total += item;
+            }
+            return total;
+            
         }
-        public static void RemoveItem()
+        public static bool TryRemoveItem(string escolha, int quantos)
         {
-
+            try
+            {
+                for (int i = 0; i < quantos; i++)
+                {
+                    PdList.Carrinho.Remove(escolha);
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         public static void AddItem(string key, double valor)
         {
