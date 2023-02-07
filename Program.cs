@@ -20,9 +20,11 @@ namespace Restaurante_fastfood
                 {
                     Console.WriteLine("Qual Produto Gostaria? (0 para parar) ");
                     escolha = Console.ReadLine().ToLower().Trim();
+                    Console.WriteLine("Quantos? ");
+                    int quantidade = int.Parse(Console.ReadLine());
                     if (Validations.Produtos_Disponiveis(escolha)) 
                     { 
-                        PdList.AddItem(escolha, PdList.Products[escolha]); 
+                        PdList.AddItem(escolha, PdList.Products[escolha], quantidade); 
                         break;
                     }
                     else if(!Validations.Produtos_Disponiveis(escolha) & escolha != "0")
@@ -41,65 +43,9 @@ namespace Restaurante_fastfood
 
             }
             Console.WriteLine("Carrinho: ");
-            PdList.ShowCarrinho();
-            while (true)
+            foreach(var item in PdList.Carrinho)
             {
-                Console.WriteLine("Deseja remover itens[S/N] ");
-                escolha = Console.ReadLine();
-                if (!Validations.Sim_Não(escolha))
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Opção inválida! ");
-                    Console.ResetColor();
-                }
-                else if(Validations.Sim_Não(escolha)) 
-                {
-                    break;
-                }
-            }
-            if (escolha[0] == 's')
-            {
-                string remover = "";
-                while(true)
-                {
-                    Console.WriteLine("Qual item gostaria de remover? ");
-                    escolha = Console.ReadLine().ToLower().Trim();
-                    Console.WriteLine("Quantas unidades?");
-                    int quantos = int.Parse(Console.ReadLine());
-                    if(PdList.TryRemoveItem(escolha, quantos))
-                    {
-
-                        Console.WriteLine($"{quantos}x {escolha} Removido com sucesso");
-
-                        while (true)
-                        {
-                            Console.WriteLine("Deseja Remover mais itens?[S/N] ");
-                            remover = Console.ReadLine().ToLower().Trim();
-                        
-                            if (Validations.Sim_Não(remover)) { break; }
-
-                            else
-                            {
-                                Console.ForegroundColor = ConsoleColor.Red;
-                                Console.WriteLine("opção invalida! ");
-                                Console.ResetColor();
-                            }
-                        }
-
-                        if (remover[0] == 'n') { break; }
-                    
-                    }
-                    else if(!PdList.TryRemoveItem(escolha, quantos))
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.WriteLine($"Ops! Verifique se o nome do Item e a quantidade estão certas");
-                        Console.ResetColor();
-                        
-                    }
-                    PdList.ShowCarrinho();
-
-                    
-                }
+                Console.WriteLine(item);
             }
             
             Owner owner = new Owner();
