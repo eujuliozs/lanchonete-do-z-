@@ -8,6 +8,9 @@ using Restaurante_fastfood.Entities.Enum;
 
 namespace Restaurante_fastfood
 {
+    /// <summary>
+    /// todos os metodos pegam um input e confirmam dados do usuario e retornam valores boleanos
+    /// </summary>
     public class ValidationsBool
     {
 
@@ -48,6 +51,12 @@ namespace Restaurante_fastfood
         }
 
     }
+
+
+
+    /// <summary>
+    /// esses usam os métodos de retorno de valor booleano acima e aplica um looping de insistencia até receber o input de dados correto
+    /// </summary>
     public class Validations
     {
         public static string Escolha_Produtos()

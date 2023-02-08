@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Restaurante_fastfood.Entities
 {
+    /// <summary>
+    /// uma intidade que contem detalhes sobre cada item adicionado ao carrinho
+    /// </summary>
     public class ItemCarrinho
     {
         public string Nome { get; set; }
