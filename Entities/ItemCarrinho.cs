@@ -21,10 +21,5 @@ namespace Restaurante_fastfood.Entities
         {
             return preço * quantidade;
         }
-
-
-
-
-
     }
 }

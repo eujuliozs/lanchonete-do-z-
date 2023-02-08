@@ -9,50 +9,40 @@ namespace Restaurante_fastfood
     {
         static void Main(string[] args)
         {
+            
             PdList começo_do_programa = new PdList();
             Console.WriteLine("Delivery App "); 
             Console.WriteLine("temos: ");
             PdList.ShowProdutos();
-            string escolha="";
             while (true)
-            { 
-                while(true)
-                {
-                    Console.WriteLine("Qual Produto Gostaria? (0 para parar) ");
-                    escolha = Console.ReadLine().ToLower().Trim();
-                    Console.WriteLine("Quantos? ");
-                    int quantidade = int.Parse(Console.ReadLine());
-                    if (Validations.Produtos_Disponiveis(escolha)) 
-                    { 
-                        PdList.AddItem(escolha, PdList.Products[escolha], quantidade); 
-                        break;
-                    }
-                    else if(!Validations.Produtos_Disponiveis(escolha) & escolha != "0")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Produto inexistente");
-                        Console.ResetColor();
-                    }
-                    else if (escolha == "0") { break; }
-                    
-                }
-                if (escolha == "0") 
-                { 
-                    break; 
-                }
-
-            }
-            Console.WriteLine("Carrinho: ");
-            foreach(var item in PdList.Carrinho)
             {
-                Console.WriteLine(item);
+                string item = Validations.Escolha_Produtos();
+                if (item == "0")
+                {
+                     break;
+                }
+                int quantidade = Validations.Numero_inteiro("quantos? ");
+                PdList.AddItem(item, PdList.Products[item], quantidade);
             }
-            
-            Owner owner = new Owner();
-            Console.WriteLine(owner);
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Carrinho: ");
+            Console.ResetColor();
 
+            PdList.ShowCarrinho();
 
-
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("pagamento: ");
+            Console.ResetColor();
+            var lista_pagamentos = new List<string>() {"cartão","pix"};
+            for(int i = 0; i < lista_pagamentos.Count; i++)
+            {
+                Console.WriteLine($"{lista_pagamentos[i]}");
+            }
+            Validations.pagamento();
+            Console.WriteLine("Processando...");
+            Thread.Sleep(900);
+            Console.WriteLine("Finalizado!!! entrega em até 30 minutos");
+            Console.WriteLine();
         }
     }
 
